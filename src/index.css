@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Government CRM Design System - 1930 Cyber Crime Helpline
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Background system */
+    --background: 210 20% 98%;
+    --foreground: 210 30% 8%;
+
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 8%;
+
+    /* Popover system */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 8%;
+
+    /* Government blue primary */
+    --primary: 210 100% 20%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 35%;
+    --primary-lighter: 210 100% 94%;
+
+    /* Secondary grays */
+    --secondary: 210 15% 94%;
+    --secondary-foreground: 210 30% 8%;
+
+    /* Muted tones */
+    --muted: 210 15% 96%;
+    --muted-foreground: 210 15% 45%;
+
+    /* Accent cyan */
+    --accent: 190 100% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 190 100% 92%;
+
+    /* Status colors */
+    --success: 142 100% 25%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 100% 94%;
+
+    --warning: 38 100% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 100% 94%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 84% 94%;
+
+    /* Borders and inputs */
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 210 100% 20%;
+
+    /* Radius */
+    --radius: 0.5rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 20%), hsl(210 100% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(190 100% 45%), hsl(190 100% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 20% 98%), hsl(210 15% 96%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(210 30% 8% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(210 30% 8% / 0.1), 0 2px 4px -2px hsl(210 30% 8% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(210 30% 8% / 0.1), 0 4px 6px -4px hsl(210 30% 8% / 0.1);
+    --shadow-primary: 0 10px 30px -10px hsl(210 100% 20% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode for government portal */
+    --background: 210 30% 8%;
+    --foreground: 210 15% 94%;
+
+    --card: 210 25% 12%;
+    --card-foreground: 210 15% 94%;
+
+    --popover: 210 25% 12%;
+    --popover-foreground: 210 15% 94%;
+
+    --primary: 210 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 45%;
+    --primary-lighter: 210 100% 20%;
+
+    --secondary: 210 20% 16%;
+    --secondary-foreground: 210 15% 94%;
+
+    --muted: 210 20% 14%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 190 100% 20%;
+
+    --success: 142 100% 35%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 100% 20%;
+
+    --warning: 38 100% 60%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 100% 20%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 84% 20%;
+
+    --border: 210 20% 20%;
+    --input: 210 20% 20%;
+    --ring: 210 100% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom scrollbar for professional look */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+@layer components {
+  /* Government CRM component styles */
+  .kpi-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .kpi-value {
+    @apply text-3xl font-bold mb-2;
+  }
+
+  .kpi-label {
+    @apply text-sm text-muted-foreground font-medium;
+  }
+
+  .status-positive {
+    @apply text-success bg-success-light;
+  }
+
+  .status-warning {
+    @apply text-warning bg-warning-light;
+  }
+
+  .status-negative {
+    @apply text-destructive bg-destructive-light;
+  }
+
+  .chart-container {
+    @apply bg-card border border-border rounded-lg p-6 shadow-sm;
+  }
+
+  .government-header {
+    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground shadow-primary;
+  }
+}
